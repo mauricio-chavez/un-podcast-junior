@@ -8,6 +8,7 @@
       :date="episode.release_date"
       :description="episode.description"
       :image="episode.images[1].url"
+      :url="episode.external_urls.spotify"
     />
   </section>
 </template>

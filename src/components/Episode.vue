@@ -8,7 +8,7 @@
       <small>{{ date }}</small>
       <p class="description">{{ shortDescription }}</p>
       <div class="buttons">
-        <BaseButton color="blue" size="small">Escuchar</BaseButton>
+        <BaseButton color="blue" size="small" :href="url">Escuchar</BaseButton>
         <BaseButton size="small">Ver Avance</BaseButton>
       </div>
     </div>
@@ -25,11 +25,15 @@ export default {
       type: String,
       required: true
     },
-    date: {
+    description: {
       type: String,
       required: true
     },
-    description: {
+    url: {
+      type: String,
+      required: true
+    },
+    date: {
       type: String,
       required: true
     },

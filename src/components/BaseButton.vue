@@ -1,6 +1,6 @@
 <template>
   <router-link v-if="to" :to="to" v-bind="$attrs" v-on="$listeners">
-    <button :class="color">
+    <button :class="[color, size]">
       <slot />
     </button>
   </router-link>
@@ -12,7 +12,7 @@
     v-bind="$attrs"
     v-on="$listeners"
   >
-    <button :class="color">
+    <button :class="[color, size]">
       <slot />
     </button>
   </a>

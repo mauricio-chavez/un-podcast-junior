@@ -10,7 +10,8 @@
 
 <style scoped>
 svg {
-  position: fixed;
-  bottom: 0px;
+  /* position: fixed;
+  bottom: 0px; */
+  margin: -8% 0 -10px;
 }
 </style>

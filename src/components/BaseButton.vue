@@ -16,7 +16,7 @@
       <slot />
     </button>
   </a>
-  <button v-else :class="color" v-bind="$attrs" v-on="$listeners">
+  <button v-else :class="[color, size]" v-bind="$attrs" v-on="$listeners">
     <slot />
   </button>
 </template>
@@ -24,13 +24,13 @@
 <script>
 export default {
   inheritAttrs: false,
-  props: ['color', 'to', 'href']
+  props: ['color', 'to', 'href', 'size']
 };
 </script>
 
 <style scoped>
 button {
-  box-shadow: 8px 8px #0d3042;
+  box-shadow: 8px 8px #000;
   border: none;
   box-sizing: border-box;
   border-radius: 2px;
@@ -40,6 +40,8 @@ button {
   margin: 4px 4px 4px 12px;
   padding: 0 48px;
   transition: all 0.2s ease-in-out;
+  background: #fff;
+  color: #000;
 }
 
 button:hover {
@@ -49,10 +51,10 @@ button:hover {
 }
 
 button.small {
-  height: 30px;
-  margin: 2px 2px 2px 6px;
-  box-shadow: 5px 5px #0d3042;
-  padding: 0 24px;
+  height: 25px;
+  margin: 1px 1px 1px 4px;
+  box-shadow: 4px 4px #000;
+  padding: 0 15px;
 }
 
 button.small:hover {

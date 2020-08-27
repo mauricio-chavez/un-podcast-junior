@@ -8,13 +8,15 @@
     <BaseButton
       color="blue"
       href="https://open.spotify.com/show/5kS4rk5hFTcw85NQF7kSh9?si=NaKnR72ITW6ODha6RCMSEg"
-      >Ver En Spotify</BaseButton
     >
+      Ver En Spotify
+    </BaseButton>
   </header>
 </template>
 
 <script>
 import BaseButton from '@/components/BaseButton.vue';
+
 export default {
   name: 'Header',
   components: { BaseButton }

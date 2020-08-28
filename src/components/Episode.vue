@@ -9,7 +9,10 @@
       <p class="description">{{ shortDescription }}</p>
       <div class="buttons">
         <BaseButton color="blue" size="small" :href="url">Escuchar</BaseButton>
-        <BaseButton size="small">Ver Avance</BaseButton>
+        <BaseButton size="small" @click="isPlaying = !isPlaying">{{
+          isPlaying ? 'Detener' : 'Escuchar Avance'
+        }}</BaseButton>
+        <audio :src="preview"></audio>
       </div>
     </div>
   </article>
@@ -33,6 +36,10 @@ export default {
       type: String,
       required: true
     },
+    preview: {
+      type: String,
+      required: true
+    },
     date: {
       type: String,
       required: true
@@ -41,6 +48,12 @@ export default {
       type: String,
       required: true
     }
+  },
+  data() {
+    return {
+      previewAudio: new Audio(this.preview),
+      isPlaying: false
+    };
   },
   computed: {
     shortName() {
@@ -57,6 +70,16 @@ export default {
       }
 
       return description;
+    }
+  },
+  watch: {
+    isPlaying(shouldPlay) {
+      if (shouldPlay) {
+        this.previewAudio.play();
+      } else {
+        this.previewAudio.pause();
+        this.previewAudio.currentTime = 0;
+      }
     }
   },
   components: { BaseButton }

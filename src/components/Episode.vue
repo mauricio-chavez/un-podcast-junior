@@ -8,10 +8,12 @@
       <small>{{ date }}</small>
       <p class="description">{{ shortDescription }}</p>
       <div class="buttons">
-        <BaseButton color="blue" size="small" :href="url">Escuchar</BaseButton>
-        <BaseButton size="small" @click="isPlaying = !isPlaying">{{
-          isPlaying ? 'Detener' : 'Escuchar Avance'
-        }}</BaseButton>
+        <BaseButton color="blue" size="small" :href="url">
+          Ir al Episodio
+        </BaseButton>
+        <BaseButton size="small" @click="isPlaying = !isPlaying">
+          {{ isPlaying ? 'Detener' : 'Escuchar Avance' }}
+        </BaseButton>
         <audio :src="preview"></audio>
       </div>
     </div>

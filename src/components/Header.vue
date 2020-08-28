@@ -35,12 +35,17 @@ img {
 
 p {
   margin: 20px auto 25px;
-  width: 80%;
+  width: 50%;
 }
 
-@media (min-width: 728px) {
+@media screen and (max-width: 728px) {
+  header {
+    margin-top: 25px;
+  }
+
   p {
-    width: 50%;
+    margin: 4% auto;
+    width: 80%;
   }
 }
 </style>

@@ -73,4 +73,19 @@ a {
   background: #013db4;
   color: #fff;
 }
+
+@media screen and (max-width: 728px) {
+  button {
+    padding: 0 18px;
+    height: 35px;
+  }
+
+  button.small {
+    height: 20px;
+    margin: 3px 2px;
+    box-shadow: 4px 4px #000;
+    padding: 0 15px;
+    font-size: 0.7rem;
+  }
+}
 </style>

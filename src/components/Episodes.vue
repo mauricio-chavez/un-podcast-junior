@@ -1,6 +1,6 @@
 <template>
   <section>
-    <h2>Episodios</h2>
+    <h2>Issues</h2>
     <Episode
       v-for="episode in episodes"
       :key="episode.id"
@@ -41,5 +41,11 @@ section {
 
 h2 {
   font-size: 2.2rem;
+}
+
+@media screen and (max-width: 728px) {
+  section {
+    margin: 0% 4%;
+  }
 }
 </style>

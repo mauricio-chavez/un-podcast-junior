@@ -4,7 +4,7 @@
       <img :src="image" :alt="name" />
     </div>
     <div class="content">
-      <h3>{{ name }}</h3>
+      <h3>{{ shortName }}</h3>
       <small>{{ date }}</small>
       <p class="description">{{ shortDescription }}</p>
       <div class="buttons">
@@ -43,6 +43,9 @@ export default {
     }
   },
   computed: {
+    shortName() {
+      return this.name.substring(9).trim();
+    },
     shortDescription() {
       let description;
       const linksIndex = this.description.indexOf('ENLACES');
@@ -66,13 +69,13 @@ article {
   align-items: space-evenly;
   background: #f0f0f0;
   border-radius: 15px;
-  margin: 30px 0;
+  margin: 25px 0;
 }
 
 h3 {
-  margin: 0;
-  margin-bottom: 5px;
+  margin: 5px 0;
   text-align: center;
+  font-size: 1.2rem;
 }
 
 .image {
@@ -92,7 +95,7 @@ img,
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: auto;
+  margin: 0 auto;
 }
 
 .description {
@@ -101,7 +104,16 @@ img,
   width: 80%;
 }
 
+.buttons {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
 @media (max-width: 728px) {
+  h3 {
+    font-size: 1rem;
+  }
+
   img,
   .image {
     width: 100px;

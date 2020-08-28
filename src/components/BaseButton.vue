@@ -51,7 +51,7 @@ button:hover {
 }
 
 button.small {
-  height: 25px;
+  height: 30px;
   margin: 1px 1px 1px 4px;
   box-shadow: 4px 4px #000;
   padding: 0 15px;
